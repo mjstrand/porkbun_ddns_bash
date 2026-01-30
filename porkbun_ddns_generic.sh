@@ -72,7 +72,7 @@ EOF
 
 # First Read the ip address
 RESPONSE=$($CURL -s -X POST "$GET_URL" \
-	-H "Content-Type: appli$CATion/json" \
+	-H "Content-Type: application/json" \
 	-d "$JSON_DATA")
 
 MATCH='"content":"'$CURRENT_IP'"';
@@ -83,7 +83,7 @@ else
 	$ECHO "Previous Value: $RESPONSE" | $TEE -a $LOGFILE;
 	# Make API request
 	RESPONSE=$($CURL -s -X POST "$SET_URL" \
-		-H "Content-Type: appli$CATion/json" \
+		-H "Content-Type: application/json" \
 		-d "$JSON_DATA")
 
 	$ECHO $RESPONSE | $TEE -a $LOGFILE;
