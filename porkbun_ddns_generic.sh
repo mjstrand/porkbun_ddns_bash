@@ -55,7 +55,7 @@ if [ -f $SAVEIP ] ; then
 fi
 if [ "$CURRENT_IP" == "$LAST_IP" ] ; then
 	$ECHO "IP Address $CURRENT_IP has not changed - no update done" | $TEE -a $LOGFILE;
-	exit 1;
+	exit 2;
 fi
 
 $ECHO "IP Address Changed from $LAST_IP to $CURRENT_IP - Updating PorkBun at $SET_URL" | $TEE -a $LOGFILE;
